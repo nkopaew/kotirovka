@@ -64,7 +64,7 @@ def order_now(order_list):
     f.write(str(data))
     f.close()
 
-
+print('kotirovka started')
 order_list = []
 delay = (60-int(str(datetime.now()).split('.')[0].split(' ')[1].split(':')[1]))
 time.sleep((delay*60))
