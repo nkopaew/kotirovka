@@ -60,14 +60,14 @@ def order_now(order_list):
     t = str(datetime.now()).split('.')
     data = [t[0], (ticker.get('BTC_USD').get('buy_price')), (ticker.get('BTC_USD').get('sell_price'))]
     order_list = order_list.append(data)
-    f = open('D:\oders.txt', 'a')
+    f = open('oders.txt', 'a')
     f.write(str(data))
     f.close()
 
 
 order_list = []
-delay = (60-(str(datetime.now()).split('.')[0].split(' ')[1].split(':')[1])
-time.sleep(delay*60)
+delay = (60-int(str(datetime.now()).split('.')[0].split(' ')[1].split(':')[1]))
+time.sleep((delay*60))
 order_in_time(900, order_list)
 
 
